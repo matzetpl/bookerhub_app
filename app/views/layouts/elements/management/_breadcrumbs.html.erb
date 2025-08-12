@@ -1,0 +1,30 @@
+
+<% if @breadcrumbs.present? %>
+  <div class="p-6">
+    <!-- Breadcrumbs -->
+    <nav class="text-sm font-medium text-gray-500" aria-label="Breadcrumb">
+      <ol class="list-none flex space-x-2">
+
+        <% @breadcrumbs.each_with_index do |breadcrumb, index| %>
+          <% url, label = breadcrumb %>
+
+          <% if url %>
+            <li class="breadcrumb-item">
+              <%= link_to label, url, class: "text-blue-600 hover:text-blue-800" %>
+            </li>
+          <% else %>
+            <li class="breadcrumb-item active">
+              <span class="text-gray-800"><%= label %></span>
+            </li>
+          <% end %>
+
+          <% unless index == @breadcrumbs.size - 1 %>
+            <li>
+              <span class="text-gray-400">/</span>
+            </li>
+          <% end %>
+        <% end %>
+      </ol>
+    </nav>
+  </div>
+<% end %>

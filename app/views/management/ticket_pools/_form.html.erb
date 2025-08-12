@@ -1,0 +1,47 @@
+
+
+<%= turbo_frame_tag "resourceModalContent" do %>
+
+  <%= simple_form_for [:management, @event, @event_location, @ticket_pool], wrapper: :tailwind,  remote: true, data: { turbo_frame: "resourceModalContent" } do |f| %>
+    <div class="mb-4">
+      <%= f.input :name,  input_html: { placeholder: "Enter name" } %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.input :capacity,  input_html: { placeholder: "Enter the capacity" } %>
+    </div>
+
+
+    <div class="mb-4">
+      <%= f.input :valid_from, as: :string, input_html: { class: 'datepicker', placeholder: "Enter the valid_from" } %>
+    </div>
+
+
+
+    <div class="mb-4">
+      <%= f.input :valid_until, as: :string, input_html: {  class: 'datepicker', placeholder: "Enter the valid_until" } %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.input :ticket_date_from, as: :string, input_html: {  class: 'datepicker', placeholder: "Enter the ticket_date_from" } %>
+    </div>
+
+
+    <div class="mb-4">
+      <%= f.input :ticket_date_to, as: :string, input_html: {  class: 'datepicker', placeholder: "Enter the ticket_date_to" } %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.input :ticket_type, label: "Status", as: :select, collection: TicketPool.ticket_types_options_for_select, prompt: "Select a type" %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.button :submit, class: "bg-indigo-500 px-4 py-2 rounded" %>
+    </div>
+
+    <script>
+      window.initializeDatepickers();
+    </script>
+  <% end %>
+<% end %>
+

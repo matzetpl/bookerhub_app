@@ -1,0 +1,23 @@
+<% if @breadcrumbs.present? %>
+  <div class="page-title light-background">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <ol>
+          <% @breadcrumbs.each_with_index do |breadcrumb, index| %>
+            <% url, label = breadcrumb %>
+            <% if url %>
+              <li class="flex items-center">
+                <a href="<%= url %>" class="hover:text-gray-800"><%= label %></a>
+              </li>
+            <% else %>
+              <li class="flex items-center text-gray-600" aria-current="page">
+                <span><%= label %></span>
+              </li>
+            <% end %>
+          <% end %> 
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+<% end %>

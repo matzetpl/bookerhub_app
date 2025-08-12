@@ -1,0 +1,18 @@
+# config/categories.yml
+
+categories:
+  - name: Muzyka
+    slug: muzyka
+    parent_slug: 
+  - name: Rock
+    slug: rock
+    parent_slug: muzyka  # This is the parent category slug
+  - name: Pop
+    slug: pop
+    parent_slug: muzyka  # This is the parent category slug
+  - name: Jazz
+    slug: jazz
+    parent_slug: muzyka  # This is the parent category slug
+  - name: Hip-hop
+    slug: hip-hop
+    parent_slug: muzyka  # This is the parent category slug

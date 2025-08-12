@@ -1,0 +1,22 @@
+<section>
+  <div class="container">
+    <div class="content">
+      <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <%= form_tag search_index_path, method: :get, role: 'search', class: 'd-flex' do %>
+            <%= text_field_tag :q, params[:q], placeholder: 'Search event ...', class: 'form-control form-control-lg me-2', style: "
+            height: 80px;
+    font-size: 25px;
+    color: green;
+    border-style: dashed;
+    border-radius: 0;
+    text-align:center;
+            
+            " %>
+            <%= submit_tag 'Szukaj', class: 'btn btn-success btn-large', style: "width:150px;" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

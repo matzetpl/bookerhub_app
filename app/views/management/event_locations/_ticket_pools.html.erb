@@ -1,0 +1,13 @@
+<%= turbo_frame_tag "eventLoctationShowTicketPools" do %>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white border border-gray-200">
+        <tbody>
+          <% @event_location.ticket_pools.each do |ticket_pool| %>
+            <tr>
+              <%= management_table_td('text-gray-800') { button_to ticket_pool.name, edit_management_event_event_location_ticket_pool_path(@event, @event_location, ticket_pool), button: true, remote: true, turbo: true, method: :get, data: {turbo_frame: 'resourceModalContent' } } %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+<% end %>

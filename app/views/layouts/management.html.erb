@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Bookerhub" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'management/management.tailwind', "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'management/toastr.min', "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'mods/pikaday', "data-turbo-track": "reload" %>
+
+    <%= javascript_importmap_tags "management" %>
+
+  </head>
+
+ <body class="bg-gray-100">
+  <div class="flex h-screen">
+    <%= render partial: "layouts/elements/management/sidebar" %>
+    
+    <!-- Main Content -->
+    <div class="flex-1">
+      <!-- Full-width white bar with heading inside and user details -->
+      <div class="bg-white w-full p-6 flex items-center justify-between">
+        <h1 class="text-4xl font-semibold text-gray-800"><%= display_layout_data(key_name: :heading) %></h1>
+        
+        <!-- User Info and Logout -->
+        <div class="flex items-center space-x-4">
+          <!-- Username (example) -->
+          <span class="text-gray-800 font-medium">Hello, <%= current_user.email %></span>
+          <span> | </span>
+          
+          <!-- Logout Link -->
+          <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "text-gray-800 hover:text-red-500" %>
+        </div>
+      </div>
+
+    <%= render partial: "layouts/elements/management/breadcrumbs" %>
+
+      <!-- Main Content Area -->
+      <div class="p-6 ">
+          <%= turbo_frame_tag "main-content" do %>
+            <%= yield %> <!-- Content of your show page, form, etc. -->
+          <% end %>
+      </div>
+    </div>
+  </div>
+
+  <%= render partial: 'layouts/elements/management/modal' %>
+
+
+
+  <%= render partial: 'layouts/elements/management/flash' %>
+
+</body>
+</html>

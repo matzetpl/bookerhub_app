@@ -1,0 +1,13 @@
+<%= turbo_frame_tag "eventShowEventLocations" do %>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white border border-gray-200">
+        <tbody>
+          <% @event.event_locations.each do |event_location| %>
+            <tr>
+              <%= management_table_td('text-gray-800') { link_to event_location.name, management_event_event_location_path(@event, event_location), data: {turbo: false} } %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+<% end %>

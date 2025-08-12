@@ -1,0 +1,135 @@
+# config/categories.yml
+
+categories:
+  - name: Muzyka
+    slug: muzyka
+    parent_slug: 
+  - name: Rock
+    slug: rock
+    parent_slug: muzyka  # This is the parent category slug
+  - name: Pop
+    slug: pop
+    parent_slug: muzyka  # This is the parent category slug
+  - name: Jazz
+    slug: jazz
+    parent_slug: muzyka  # This is the parent category slug
+  - name: Hip-hop
+    slug: hip-hop
+    parent_slug: muzyka  # This is the parent category slug
+  - name: Elektroniczna
+    slug: elektroniczna
+    parent_slug: muzyka  # This is the parent category slug
+  - name: Country
+    slug: country
+    parent_slug: muzyka  # This is the parent category slug
+  - name: Folk
+    slug: folk
+    parent_slug: muzyka  # This is the parent category slug
+  - name: Inne
+    slug: inne
+    parent_slug: muzyka  # This is the parent category slug
+  - name: Festiwale Muzyczne
+    slug: festiwale-muzyczne
+    parent_slug: 
+  - name: Rockowe
+    slug: rockowe
+    parent_slug: festiwale-muzyczne  # This is the parent category slug
+  - name: Popowe
+    slug: popowe
+    parent_slug: festiwale-muzyczne  # This is the parent category slug
+  - name: Jazzowe
+    slug: jazzowe
+    parent_slug: festiwale-muzyczne  # This is the parent category slug
+  - name: Elektroniczne
+    slug: elektroniczne
+    parent_slug: festiwale-muzyczne  # This is the parent category slug
+  - name: Hip-hopowe
+    slug: hip-hopowe
+    parent_slug: festiwale-muzyczne  # This is the parent category slug
+  - name: Country
+    slug: country
+    parent_slug: festiwale-muzyczne  # This is the parent category slug
+  - name: Folkowe
+    slug: folkowe
+    parent_slug: festiwale-muzyczne  # This is the parent category slug
+  - name: Inne
+    slug: inne
+    parent_slug: festiwale-muzyczne  # This is the parent category slug
+  - name: Zespoły na Żywo
+    slug: zespoly-na-zywo
+    parent_slug: 
+  - name: Rockowe
+    slug: rockowe
+    parent_slug: zespoly-na-zywo  # This is the parent category slug
+  - name: Popowe
+    slug: popowe
+    parent_slug: zespoly-na-zywo  # This is the parent category slug
+  - name: Jazzowe
+    slug: jazzowe
+    parent_slug: zespoly-na-zywo  # This is the parent category slug
+  - name: Zespoły Hip-hopowe
+    slug: zespoly-hip-hopowe
+    parent_slug: zespoly-na-zywo  # This is the parent category slug
+  - name: Elektroniczne
+    slug: elektroniczne
+    parent_slug: zespoly-na-zywo  # This is the parent category slug
+  - name: Country
+    slug: country
+    parent_slug: zespoly-na-zywo  # This is the parent category slug
+  - name: Folkowe
+    slug: folkowe
+    parent_slug: zespoly-na-zywo  # This is the parent category slug
+  - name: Inne
+    slug: inne
+    parent_slug: zespoly-na-zywo  # This is the parent category slug
+  - name: Stand-up
+    slug: stand-up
+    parent_slug: 
+  - name: Stand-up Klasyczny
+    slug: stand-up-klasyczny
+    parent_slug: stand-up  # This is the parent category slug
+  - name: Stand-up Ciemny
+    slug: stand-up-ciemny
+    parent_slug: stand-up  # This is the parent category slug
+  - name: Stand-up Polityczny
+    slug: stand-up-polityczny
+    parent_slug: stand-up  # This is the parent category slug
+  - name: Stand-up Improwizowany
+    slug: stand-up-improwizowany
+    parent_slug: stand-up  # This is the parent category slug
+  - name: Stand-up Satyryczny
+    slug: stand-up-satyryczny
+    parent_slug: stand-up  # This is the parent category slug
+  - name: Stand-up Alternatywny
+    slug: stand-up-alternatywny
+    parent_slug: stand-up  # This is the parent category slug
+  - name: Stand-up Storytelling
+    slug: stand-up-storytelling
+    parent_slug: stand-up  # This is the parent category slug
+  - name: Stand-up Czysty
+    slug: stand-up-czysty
+    parent_slug: stand-up  # This is the parent category slug
+  - name: Stand-up Roast
+    slug: stand-up-roast
+    parent_slug: stand-up  # This is the parent category slug
+  - name: Stand-up Sketch
+    slug: stand-up-sketch
+    parent_slug: stand-up  # This is the parent category slug
+  - name: Inne Wydarzenia
+    slug: inne-wydarzenia
+    parent_slug: 
+  - name: Teatr i Dramat
+    slug: teatr-i-dramat
+    parent_slug: inne-wydarzenia  # This is the parent category slug
+  - name: Taniec i Balet
+    slug: taniec-i-balet
+    parent_slug: inne-wydarzenia  # This is the parent category slug
+  - name: Wydarzenia Literackie
+    slug: wydarzenia-literackie
+    parent_slug: inne-wydarzenia  # This is the parent category slug
+  - name: Pokazy Filmowe
+    slug: pokazy-filmowe
+    parent_slug: inne-wydarzenia  # This is the parent category slug
+  - name: Wystawy i Galerie Sztuki
+    slug: wystawy-i-galerie-sztuki
+    parent_slug: inne-wydarzenia  # This is the parent category slug

@@ -1,0 +1,38 @@
+<div class="overflow-x-auto p-4">
+  <table class="min-w-full bg-white border border-gray-200">
+    <thead class="bg-gray-100">
+      <tr>
+        <%= management_table_th(:name) %>
+        <%= management_table_th(:start_date) %>
+        <%= management_table_th(:end_date) %>
+
+        <%= management_table_th(:category_id) %>
+        <%= management_table_th(:status) %>
+        <%= management_table_th_action() %>
+
+      </tr>
+    </thead>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <%= management_table_td('text-gray-800') { event.name} %>
+          <%= management_table_td('text-gray-800') { event.start_date} %>
+          <%= management_table_td('text-gray-800') { event.end_date} %>
+          <%= management_table_td('text-gray-800') { event.category_id} %>
+          <%= management_table_td('text-gray-800') { event.status} %>
+
+          <%= management_table_td('text-gray-800 flex') do %>
+            <%= management_table_button('Show', management_event_path(event.id), 'show') %>
+          <% end %>
+          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+
+</div>
+
+
+

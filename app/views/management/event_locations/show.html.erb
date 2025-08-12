@@ -1,0 +1,29 @@
+<div class="container mx-auto">
+  <!-- Flex container for two rows (flex-direction: column) -->
+    <!-- First Row (left content) -->
+    <div class="flex flex-row gap-6 bg-gray-50 p-6 rounded-lg">
+      <!-- Box 1 in Row 1 -->
+      <div class="flex-1 space-y-6 mb-4">
+        <div class="flex justify-between items-center mb-4">
+          <!-- Title on the left -->
+          <%= render partial: 'management/event_locations/event_location_heading' %>
+          <!-- Button on the right -->
+          <%= management_table_button('Edit', edit_management_event_event_location_path(@event, @event_location.id), 'edit', button: true, remote: true, turbo: true, method: :get, data: {turbo_frame: 'resourceModalContent' }) %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row (right content) -->
+    <div class="flex flex-row gap-6 bg-gray-50 p-6 rounded-lg">
+      <!-- Box 1 in Row 2 -->
+      <div class="flex-1 ">
+        <div class="flex justify-between items-center mb-4">
+        <div><h4 class="text-xl font-semibold text-gray-800">Grupy biletowe</h4>
+          <p class="text-gray-600">Lista grup biletowych w danej lokalizacji np (sektor1 , VIP, Dzień 1,2 itd) </p>
+        </div>
+        <%= management_table_button('New', new_management_event_event_location_ticket_pool_path(@event, @event_location.id), 'new', button: true, remote: true, turbo: true, method: :get, data: {turbo_frame: 'resourceModalContent' }) %>
+      </div>
+        <%= render partial: 'management/event_locations/ticket_pools' %>
+      </div>
+    </div>
+</div>

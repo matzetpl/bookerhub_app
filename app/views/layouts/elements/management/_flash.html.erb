@@ -1,0 +1,13 @@
+
+<%= turbo_frame_tag "managementFlashMessages" do %>
+    <script>
+    <% flash.each do |type, message| %>
+      <% if type.to_s == "notice" %>
+        window.showSuccess("<%= j message %>");
+      <% elsif type.to_s == "alert" %>
+        window.showError("<%= j message %>");
+      <% end %>
+    <% end %>
+    </script>
+<% end %>
+

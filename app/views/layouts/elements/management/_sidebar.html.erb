@@ -1,0 +1,45 @@
+<div class="w-64 p-4 bg-white border-r">
+  <nav class="mt-6">
+    <ul>
+
+      <li class="text-xs  font-semibold text-gray-400  mb-2 mt-2">General</li>
+
+
+      <li>
+        <%= management_sidebar_link_to(management_dashboard_url, 'Dashboard') %>
+      </li>
+
+      <li class="text-xs  font-semibold text-gray-400  mb-2 mt-2">Management</li>
+
+      <li>
+        <%= management_sidebar_link_to(management_events_url, 'Events') %>
+      </li>
+
+      <li class="text-xs  font-semibold text-gray-400  mb-2 mt-2">Sales</li>
+
+      <li>
+        <%= management_sidebar_link_to(management_orders_url, 'Orders') %>
+      </li>
+
+      <li>
+        <%= management_sidebar_link_to(management_clients_url, 'Clients') %>
+      </li>
+
+      <li>
+        <%= management_sidebar_link_to(management_messages_url, 'Messages') %>
+      </li>
+
+      <li>
+        <%= management_sidebar_link_to(management_payments_url, 'Payments') %>
+      </li>
+
+      <li class="text-xs  font-semibold text-gray-400  mb-2 mt-2">Organization</li>
+
+      <li>
+        <%= management_sidebar_link_to(management_users_url, 'Users') %>
+      </li>
+
+
+    </ul>
+  </nav>
+</div>

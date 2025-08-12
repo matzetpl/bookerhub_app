@@ -1,0 +1,41 @@
+<%= turbo_frame_tag "events" do %>
+
+<section>
+  <div class="container">
+    <% @events_objects.each do |event| %>
+      <div class="row  align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-3">
+            <a href="<%= event_show_path_helper(event)%>" data-turbo="false">
+              
+            <% if event.image.attached? %>
+                <%= image_tag event.image.variant(resize_to_fill: [300, 200]), width: 300, height: 200, class: "d-block mx-lg-auto img-fluid", style: "max-height: 200px; width: 300px;" %>
+            <% end %>
+
+            </a>
+          </div>
+          <div class="col-lg-9">
+            <h3 class="fw-bold text-body-emphasis lh-1 mb-3">
+              <a href="<%= event_show_path_helper(event) %>" data-turbo="false"><%= event.name %></a></h3>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <a href="<%= event_show_path_helper(event) %>" data-turbo="false" type="button" class="btn btn-primary btn-lg px-4 me-md-2">KUP BILET</a>
+            </div>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+
+  <% if @pagy.next %>
+    <%= turbo_frame_tag "events", loading: :lazy do %>
+      <% if params[:search].present? %>
+        <%= link_to "Next Page", search_index_path(search: params[:search], page: @pagy.next), data: { turbo_frame: "events" } %>
+      <% elsif params[:category_id].present? %>
+        <%= link_to "Next Page", category_show_path(slug: params[:categories], page: @pagy.next), data: { turbo_frame: "events" } %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+<% end %>
+

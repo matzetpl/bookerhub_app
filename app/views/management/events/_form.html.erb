@@ -1,0 +1,54 @@
+
+
+<%= turbo_frame_tag "resourceModalContent" do %>
+
+  <%= simple_form_for @event, wrapper: :tailwind, url: management_event_path(@event.id), remote: true, data: { turbo_frame: "resourceModalContent" } do |f| %>
+    <div class="mb-4">
+      <%= f.input :name, label: "Event Name", input_html: { placeholder: "Enter the event name" } %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.input :image, label: "Image URL", input_html: { placeholder: "Enter image URL" } %>
+    </div>
+
+
+    <% if @event.image.attached? %>
+      <div class="mb-4">
+
+        <div class="max-w-4xl mx-auto p-6">
+          <!-- Display image if attached -->
+          <div class="mt-6">
+              <!-- Show the image -->
+            <div class="relative w-full h-80 m-auto overflow-hidden flex justify-center items-center">
+              <%= image_tag @event.image, class: "object-cover w-full h-full", style: "max-height: 100px; width: auto;" %>
+            </div>
+
+              <!-- Download link -->
+            <div class="mt-4">
+              <%= link_to "Download Image", rails_blob_path(@event.image, disposition: "attachment"), class: "inline-block px-6 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+
+    <div class="mb-4">
+      <%= f.input :description, label: "Event Description", as: :text, input_html: { placeholder: "Describe the event" } %>
+    </div>
+
+
+    <div class="mb-4">
+      <%= f.input :status, label: "Status", as: :select, collection: Event.status_options_for_select, prompt: "Select a status" %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.input :category_id, label: "Category", as: :select, collection: Category.all.collect { |cat| [cat.name, cat.id] }, prompt: "Select a category" %>
+    </div>
+    
+    <div class="mb-4">
+      <%= f.button :submit, class: "bg-indigo-500 px-4 py-2 rounded" %>
+    </div>
+  <% end %>
+<% end %>
+

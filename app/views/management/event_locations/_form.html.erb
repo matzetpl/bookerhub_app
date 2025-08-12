@@ -1,0 +1,48 @@
+
+
+<%= turbo_frame_tag "resourceModalContent" do %>
+
+  <%= simple_form_for [:management, @event, @event_location], wrapper: :tailwind,  remote: true, data: { turbo_frame: "resourceModalContent" } do |f| %>
+    <div class="mb-4">
+      <%= f.input :name,  input_html: { placeholder: "Enter the location name" } %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.input :lng %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.input :lat %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.input :address %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.input :post_code %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.input :city %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.input :street %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.input :house %>
+    </div>
+    
+    <div class="mb-4">
+      <%= f.input :apartment %>
+    </div>
+
+
+    <div class="mb-4">
+      <%= f.button :submit, class: "bg-indigo-500 px-4 py-2 rounded" %>
+    </div>
+  <% end %>
+<% end %>
+
